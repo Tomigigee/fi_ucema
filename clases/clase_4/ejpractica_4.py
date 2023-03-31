@@ -27,6 +27,8 @@ def ejercicio_rutas():
 
 
 
+
+
 # crear la carpeta Prácticas en el directorio actual:
 #os.mkdir("Prácticas")
 
