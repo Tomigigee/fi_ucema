@@ -10,7 +10,8 @@ with open("archivo1.txt", "r") as archivo:
         if not linea.startswith(letra_inicio):
             contador += 1  
 print("El archivo {} tiene {} líneas que no comienzan con la letra {}.".format("archivo1.txt", contador, letra_inicio))
- 
+
+
 #2)Escribí un programa que lea un archivo e imprima las primeras n líneas.
 cantidad_lineas = 5
 with open("archivo2.txt", "r") as archivo:
@@ -52,8 +53,17 @@ with open("archivo_sin_salto.txt", "w") as archivo_sin_salto:
     archivo_sin_salto.write(contenido_sin_salto)
 
 #7)Escribí un porgrama que lea un archivo e identifique la palabra más larga, la cual debe imprimir y decir cuantos caracteres tiene.
-
- 
+def longest_word(archivo):
+    max_long = 0
+    palabra = ""
+    with open(archivo, "r") as f:
+        word_list = f.read().split()
+        for word in word_list:
+            if len(word) > max_long :
+                max_long = len(word)
+                palabra = word
+    print("la palabra mas larga es", palabra, "con", max_long, "caracteres")
+longest_word("archivo1.txt") 
 #8)Escribí un programa que abra dos documentos y guarde el contenido de ambos en un otro documento ya existente.
 with open("archivo8.txt", "r") as archivo1:
     archivo1_leido = archivo1.read()
