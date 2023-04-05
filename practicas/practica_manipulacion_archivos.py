@@ -44,12 +44,29 @@ print("El archivo tiene {} palabras".format(cantidad_palabras))
  
 #6)Realizá un programa que lea un archivo, elimine todos los saltos de línea y lo guarde en otro archivo.
 
- 
+with open("archivo6.txt", "r") as archivo:
+    contenido = archivo.read()
+contenido_sin_salto = contenido.replace("\n", "")
+
+with open("archivo_sin_salto.txt", "w") as archivo_sin_salto:
+    archivo_sin_salto.write(contenido_sin_salto)
+
 #7)Escribí un porgrama que lea un archivo e identifique la palabra más larga, la cual debe imprimir y decir cuantos caracteres tiene.
 
  
 #8)Escribí un programa que abra dos documentos y guarde el contenido de ambos en un otro documento ya existente.
+with open("archivo8.txt", "r") as archivo1:
+    archivo1_leido = archivo1.read()
+with open("archivob.txt", "r") as archivo2:
+    archivo2_leido = archivo2.read()
+with open("archivo8leido.txt", "a") as archivo_final:
+    archivo_final.write(archivo1_leido)
+    archivo_final.write(archivo2_leido)
 
+#def join_files(file1,file2,file3):
+ #   with open(file1, "r") as f1, open(file2, "r") as f2, open(file3, "a") as f3:    #otraa forma
+  #      f3.write(f1.read() + f2.read())
+#join_files("documento", "documento2", "documento3")
 
 #9)Realizá un programa que lea un archivo y obtenga la frecuencia de cada palabra que hay en el archivo. Recordá que la frecuencia es la relación entre número de veces que aparece la palabra en cuestión con respecto a la cantidad total de palabras.
 
