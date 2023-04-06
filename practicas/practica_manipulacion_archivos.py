@@ -6,7 +6,7 @@ letra_inicio = "P"
 contador = 0
 with open("archivo1.txt", "r") as archivo:
     for linea in archivo:
-        linea = linea.strip() ## Eliminar el salto de línea al final de la línea
+        #linea = linea.strip() # Eliminar el salto de línea al final de la línea ##opcional
         if not linea.startswith(letra_inicio):
             contador += 1  
 print("El archivo {} tiene {} líneas que no comienzan con la letra {}.".format("archivo1.txt", contador, letra_inicio))
@@ -41,7 +41,13 @@ print("El archivo tiene {} palabras".format(cantidad_palabras))
 
  
 #5)Escribí un programa que lea un archivo, reemplace una letra por esa misma letra más un salto de línea y lo guarde en otro archivo.
+letra = "p"
+with open("archivo5.txt", "r") as archivo:
+    contenido_archivo5 = archivo.read()
+    letras_reemplazado = contenido_archivo5.replace(letra, "m")
 
+with open("archivo5,5.txt", "a") as arch:
+    arch.write(letras_reemplazado)
  
 #6)Realizá un programa que lea un archivo, elimine todos los saltos de línea y lo guarde en otro archivo.
 
@@ -79,5 +85,29 @@ with open("archivo8leido.txt", "a") as archivo_final:
 #join_files("documento", "documento2", "documento3")
 
 #9)Realizá un programa que lea un archivo y obtenga la frecuencia de cada palabra que hay en el archivo. Recordá que la frecuencia es la relación entre número de veces que aparece la palabra en cuestión con respecto a la cantidad total de palabras.
+palabra = "hola"
+with open("archivo9.txt", "r") as archivo:
+    arch_leido = archivo.read()
+    palabras99 = arch_leido.split()
+    cantidad_palabras = len(palabras99)
+    veces_palabra = arch_leido.count(palabra)
+    frecuencia = (veces_palabra) / cantidad_palabras
+
+print(frecuencia)
 
 #10)Escribí un programa que lea todos los archivos .txt de una carpeta dada (Carpeta1) y los añada a un archivo dentro de la carpeta Resultado, que a su vez se tiene que encontrar dentro de Carpeta1.
+ruta_carpeta1 = "C:/Users/fgige/Desktop/fi_ucema/practicas/carpeta 1" 
+ruta_resultado = os.path.join(ruta_carpeta1, "resultado")       ## Definimos la ruta de la carpeta Carpeta1 y la carpeta Resultado
+ruta_archivo_resultado = os.path.join(ruta_resultado, "resultado.txt")  # Definimos la ruta del archivo donde se van a concatenar los archivos .txt
+
+archivo_resultado = open(ruta_archivo_resultado, "a")
+
+for archivo in os.listdir(ruta_carpeta1):
+    if archivo.endswith(".txt"):
+        ruta_archivo = os.path.join(ruta_carpeta1, archivo)
+        archivo_txt = open(ruta_archivo, "r")
+
+        contenido = archivo_txt.read()
+        archivo_resultado.write(contenido)
+
+
