@@ -100,10 +100,10 @@ ruta_carpeta1 = "C:/Users/fgige/Desktop/fi_ucema/practicas/carpeta 1"
 ruta_resultado = os.path.join(ruta_carpeta1, "resultado")       ## Definimos la ruta de la carpeta Carpeta1 y la carpeta Resultado
 ruta_archivo_resultado = os.path.join(ruta_resultado, "resultado.txt")  # Definimos la ruta del archivo donde se van a concatenar los archivos .txt
 
-archivo_resultado = open(ruta_archivo_resultado, "a")
+archivo_resultado = open(ruta_archivo_resultado, "a") # Abrimos el archivo en modo "a" para añadir contenido al final del archivo si existe
 
-for archivo in os.listdir(ruta_carpeta1):
-    if archivo.endswith(".txt"):
+for archivo in os.listdir(ruta_carpeta1): #recorremos todos los archivos de la carpeta
+    if archivo.endswith(".txt"): #comprobamos que el archivo termine en txt
         ruta_archivo = os.path.join(ruta_carpeta1, archivo)
         archivo_txt = open(ruta_archivo, "r")
 
