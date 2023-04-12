@@ -70,6 +70,7 @@ def longest_word(archivo):
                 palabra = word
     print("la palabra mas larga es", palabra, "con", max_long, "caracteres")
 longest_word("archivo1.txt") 
+
 #8)Escribí un programa que abra dos documentos y guarde el contenido de ambos en un otro documento ya existente.
 with open("archivo8.txt", "r") as archivo1:
     archivo1_leido = archivo1.read()
