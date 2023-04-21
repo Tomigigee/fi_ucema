@@ -1,4 +1,13 @@
-class Golondrina:
+#!usr/bin/env python3
+class AnimalAlado:
+  def esta_feliz(self):
+    return self.energia >= 100
+  
+  def comer():
+    pass
+
+
+class Golondrina(AnimalAlado):
   def __init__(self, energia): #definimos el estado del objeto, es el constructor
     self.energia = energia
 
