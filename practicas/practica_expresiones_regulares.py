@@ -5,7 +5,14 @@ def caracteres_permitidos(string):
     return bool(re.search("[a-zA-Z0-9]", string))
 print(caracteres_permitidos("manz@"))
 
+def caracteres_perm(string):
+    return bool(re.search("[a-zA-Z0-9]", string))
+print(caracteres_perm("hoola"))
 #2 Escribí un programa que verifique si un string tiene todos sus caracteres permitidos. Estos caracteres son a-z, A-Z y 0-9.
+def todo_permitido(string):
+    return not bool(re.search("[^a-zA-Z0-9]", string))
+print("2", todo_permitido("mana"))
+
 def todos_petmitidos(string):
     return not bool(re.search("[^a-zA-Z0-9]", string))
 print(todos_petmitidos("manz@na"))
@@ -54,16 +61,22 @@ def palabras_unidas(string):
         return "Patron encontrado"
     else:
         return "patron no encontrado"
-print(palabras_unidas("hola_hola"))
+print("4", palabras_unidas("hola_hola"))
 
 #5)Escribí un programa que diga si un string empieza con un número específico.
+numero = 5
 def numero_especifico(string):
-    patron5 = "^\d$"
-    
+   if re.search(numero,string) is not None:
+       return "Patron encontrado"
+   else:
+       return "patron no encontrado"
+print("5",numero_especifico("597"))
 
 #6)Escribí un programa que dada una lista de strings verifique si se encuentran en una frase dada.
 
-#8 Escribi un programa que separe y devuelva los caracteres numericos de un string
+#7)Realizá un programa que encuentre un string que contenga solamente letras minúsculas, mayúsculas, espacios y números.
+
+#8) Escribi un programa que separe y devuelva los caracteres numericos de un string
 def devuelve_numeros(string):
     resultado = re.split("\D+", string)
     for elemento in resultado:
@@ -75,12 +88,34 @@ def entre_guiones(string):
     return re.findall(r"-(.*?)-", string) #cuando usamos el ? favorecemos los matrches internos. Si no usamos el ? no encontraría los guiones del medio, sino que solo el primero y el ultimo.
 print(entre_guiones("hoy -me fui- pero despues -volvi- moto")) 
 
-#11
+#10)Obtené las substrings y las posiciones de estas en una string dada considerando que las substrings están delimitadas por los caracteres @ o &.
+
+#11)Realizá un programa que dado una lista de strings verifique que dos palabras dentro del string empiecen con la letra P y las imprima. (Lista de ejemplo: ["Práctica Python", "Práctica C++", "Práctica Fortran"]).
+
+#12)Escribí un programa que reemplace todas las ocurrencias de espacios, guiones bajos y dos puntos por la barra vertical (|).
+def separar_ocurrencias(string): 
+    return re.sub(r"[ _:]", "|", string)   #usamos re.sub para reemplazar 
+print(separar_ocurrencias( "Hola que tal:buen dia"))
+
+#13)Escribí un programa que reemplace los dos primeros caracteres no alfanúmericos por guiones bajos.
+def reemplazar_caracteres(string):
+    return re.sub(r"^\W{2}", ".", string, count = 1)
+
+print(reemplazar_caracteres("12hola12"))
+
+#14)Realizá un programa que reemplace los espacios y tabulaciones por punto y coma.
  
-
-
-
-
-
-
+#15) Realizá un programa que validar si una cuenta de mail está escrita correctamente.
+def mail_correcto(string):
+    return bool(re.search("^\w+[.-_]?\w*[@][a-z]+[.][a-z]+[.]?[a-z]?$", string ))
+print(mail_correcto("Tomigigee@gmail.com")) 
+""""
+r: significa que cualquier carácter especial contenido en la cadena se interpreta literalmente. (raw string)
+ ^: indica el inicio de línea
+ [a-zA-Z0-9._%+-]+: representa el nombre del usuario de la dirección de correo electrónico,  el cual debe estar conformado por uno o más caracteres alfanuméricos, puntos, guiones bajos, porcentajes, más y guiones.
+ @: se utiliza para separar el nombre del usuario de la dirección de correo electrónico del dominio.
+ [a-zA-Z0-9.-]+: especifica el dominio del correo electrónico, puede estar conformado por uno o más caracteres alfanuméricos, puntos y guiones.
+ \.: indica que debe haber un punto.
+ [a-zA-Z]{2,}: especifica la extensión de la dirección de correo electrónico, la cual debe estar conformada por dos o más caracteres alfabéticos.
+""" 
 

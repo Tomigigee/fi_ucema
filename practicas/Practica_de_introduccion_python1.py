@@ -89,7 +89,7 @@ print(par_impar(4))
 
 #15)Escribir una función que tome como parámetro una frase y nos diga cuántas "a" (o "A") hay en la frase, utilizando for.
 #frase = "hola como estas"
-#def cuantas_a():   #no me salio
+ #def cuantas_a():   #no me salio
  #   for i in frase:
 
 
