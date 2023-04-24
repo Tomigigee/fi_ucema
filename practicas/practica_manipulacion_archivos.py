@@ -13,13 +13,40 @@ print("El archivo {} tiene {} líneas que no comienzan con la letra {}.".format(
 
 
 #2)Escribí un programa que lea un archivo e imprima las primeras n líneas.
+cantidad_lineas = 2
+def leer_imprimir(archivo):
+    with open(archivo, "r") as archivo:
+        for linea in range(cantidad_lineas):
+            lineas = archivo.readline()
+            print(lineas)
+print(leer_imprimir("archivo2.txt"))
+
+""""
 cantidad_lineas = 5
 with open("archivo2.txt", "r") as archivo:
     for linea in range(cantidad_lineas):
         linea = archivo.readline()
-        print(linea)
+        print(linea)"""
 
 #3)Escribí un programa que lea un archivo, guarde las líneas del archivo en una lista y luego imprima las n últimas.
+n = 4
+lineas = []
+def leer_guardar(archivo):
+    with open(archivo, "r") as archivo:
+        lineas = archivo.readlines()
+    ultimas_lineas = lineas[-n:]
+    for linea in ultimas_lineas:
+        print(linea) #uso strip para eliminar caracteres de salto de linea o espacio en blanco al final de la linea
+print(leer_guardar("archivo3.txt"))
+        
+
+
+
+
+
+
+
+
 n = 3
 lineas = [] #archivo donde almacenare las lineas
 with open("archivo3.txt", "r") as archivo:

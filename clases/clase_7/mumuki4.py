@@ -52,4 +52,7 @@ class Colectivo(MedioDeTransporte):
     
   def entran_personas(self, personas):
     return True
-
+  
+  def cargar_combustible(self, combustible_nuevo):
+    super().cargar_combustible(combustible_nuevo)
+    self.pasajeros = 0  
