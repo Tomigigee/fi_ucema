@@ -7,4 +7,5 @@ archivo.close()
 resultado = []
 for item in re.findall("(\w+\s\w+)(:\sO\+)", texto):
     resultado.append(item[0])
-print(resultado)
+    print(resultado)  
+    
