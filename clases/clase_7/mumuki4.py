@@ -56,3 +56,22 @@ class Colectivo(MedioDeTransporte):
   def cargar_combustible(self, combustible_nuevo):
     super().cargar_combustible(combustible_nuevo)
     self.pasajeros = 0  
+
+class Biblioteca:
+  def __init__(self):
+    self.libros = []
+ 
+  def agregar_libro(self, libro):
+    return self.libros.append(libro)
+  def libros_largos(self):
+    return [libro for libro in self.libros if libro.es_largo()]
+  def titulos_disponibles(self):
+    return [libro.titulo for libro in self.libros ] 
+
+class Libro:
+  def __init__(self, titulo, paginas, genero):
+    self.paginas = paginas
+    self.titulo = titulo
+    self.genero = genero
+  def es_largo(self):
+    return self.paginas > 300

@@ -4,7 +4,7 @@
 import os, glob, sys
 
 def ejercicio_rutas():
-    os.chdir("Informes")
+    os.chdir("Informes") #nos permite movernos de carpeta hasta la ruta indicada
     txt = glob.glob("*.txt")
     cantidad_estado = []
     cantidad_lineas = []
@@ -14,7 +14,7 @@ def ejercicio_rutas():
             cantidad_estado.append(file_completa.count("estado"))
             cantidad_estado.append(file_completa.count("\n"))
 
-    os.mkdir("Apellido")
+    os.mkdir("Apellido") #crea una carepta en la ruta indicada(si queremos crearla en la carpeta donde estamos parados solo tenemos que poner el nombre de la carpeta)
     with open("Apellido/Lista.txt", "w") as salida: #Le tengo que decir donde quiero que cree la lista
         for archivo in txt:
             with open(archivo,"r") as file:
@@ -41,7 +41,7 @@ def carpeta():
             with open(archivo, "r") as file:
                 primer_linea = file.readline()
                 salida.write(primer_linea)
-                
+
 
 
 

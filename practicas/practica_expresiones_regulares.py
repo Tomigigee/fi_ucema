@@ -65,12 +65,12 @@ print("4", palabras_unidas("hola_hola"))
 
 #5)Escribí un programa que diga si un string empieza con un número específico.
 numero = 5
-def numero_especifico(string):
-   if re.search(numero,string) is not None:
-       return "Patron encontrado"
-   else:
-       return "patron no encontrado"
-print("5",numero_especifico("597"))
+#def numero_especifico(string):
+ #  if re.search(numero,string) is not None:
+  #     return "Patron encontrado"
+   #else:
+    #   return "patron no encontrado"
+#print(numero_especifico("cuack"))
 
 #6)Escribí un programa que dada una lista de strings verifique si se encuentran en una frase dada.
 
@@ -119,3 +119,11 @@ r: significa que cualquier carácter especial contenido en la cadena se interpre
  [a-zA-Z]{2,}: especifica la extensión de la dirección de correo electrónico, la cual debe estar conformada por dos o más caracteres alfabéticos.
 """ 
 
+
+def er(string):
+    return re.findall("([a-z]{4})(er)", string)
+print(er("llover, comer, barrer "))
+
+def encontrar_nombres(string):
+    return re.findall("[A-Z][a-z]\w+", string)
+print(encontrar_nombres("Maria y Andres tienen 3 hijos, Juan de 16, Marcela de 10 y Daniel de 5"))
