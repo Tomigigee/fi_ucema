@@ -1,3 +1,5 @@
+
+
 #1 Escribí un programa que verifique si un string tiene al menos un carácter permitido. Estos caracteres son a-z, A-Z y 0-9.
 import re
 
@@ -73,8 +75,20 @@ numero = 5
 #print(numero_especifico("cuack"))
 
 #6)Escribí un programa que dada una lista de strings verifique si se encuentran en una frase dada.
+#lista = ["hola", "como", "estas"]
+#def chequear_lista(lista, string):
+ #   patron6 = ""
+
+
 
 #7)Realizá un programa que encuentre un string que contenga solamente letras minúsculas, mayúsculas, espacios y números.
+def solo_minusculas(string):
+    patron7 = "[a-zA-Z0-9 ]+"
+    re.findall(patron7, string) 
+print(solo_minusculas("buen DI@ 678"))
+
+
+
 
 #8) Escribi un programa que separe y devuelva los caracteres numericos de un string
 def devuelve_numeros(string):
@@ -85,12 +99,20 @@ devuelve_numeros("hoy hice 3 medialunas con 6 cafes y 2 huevos")
 
 #9 Escribí un programa que extraiga los caracteres que estén entre guiones en un string. (String de ejemplo: "Hoy estuvimos trabajando con re -regular expression- en python -con VSCode-")
 def entre_guiones(string):
-    return re.findall(r"-(.*?)-", string) #cuando usamos el ? favorecemos los matrches internos. Si no usamos el ? no encontraría los guiones del medio, sino que solo el primero y el ultimo.
+    return re.findall("-(.*?)-", string) #cuando usamos el ? favorecemos los matrches internos. Si no usamos el ? no encontraría los guiones del medio, sino que solo el primero y el ultimo.
 print(entre_guiones("hoy -me fui- pero despues -volvi- moto")) 
 
 #10)Obtené las substrings y las posiciones de estas en una string dada considerando que las substrings están delimitadas por los caracteres @ o &.
 
 #11)Realizá un programa que dado una lista de strings verifique que dos palabras dentro del string empiecen con la letra P y las imprima. (Lista de ejemplo: ["Práctica Python", "Práctica C++", "Práctica Fortran"]).
+lista_strings = ["Práctica Python Pancho", "Práctica C++", "Práctica Fortran"]
+def empiezan_con_p(lista):
+    patron11 = r"P\w* P\w* P\w*" 
+    for string in lista:
+        if re.search(patron11, string):
+            palabras = re.findall(patron11, string)
+            print(f"En la cadena '{string}' las palabras que empiezan con P son: {palabras}")
+print(empiezan_con_p(lista_strings))
 
 #12)Escribí un programa que reemplace todas las ocurrencias de espacios, guiones bajos y dos puntos por la barra vertical (|).
 def separar_ocurrencias(string): 
@@ -104,7 +126,10 @@ def reemplazar_caracteres(string):
 print(reemplazar_caracteres("12hola12"))
 
 #14)Realizá un programa que reemplace los espacios y tabulaciones por punto y coma.
- 
+def reemplazar_espacios(string):
+    patron = "[ ]"
+    return re.sub(patron, ";", string)
+print(reemplazar_espacios("habia una vez un brujo"))
 #15) Realizá un programa que validar si una cuenta de mail está escrita correctamente.
 def mail_correcto(string):
     return bool(re.search("^\w+[.-_]?\w*[@][a-z]+[.][a-z]+[.]?[a-z]?$", string ))
