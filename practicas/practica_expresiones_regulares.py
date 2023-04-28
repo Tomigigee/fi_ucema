@@ -58,7 +58,7 @@ print(encontrar_2_o_3("hheeeey")) #encuentra
 
 #4 encuentre una palabra unida a otra con un guion bajo un string
 def palabras_unidas(string):
-    patron4 = "^[a-z]+_[a-z]+$"
+    patron4 = "[a-z]+_[a-z]+"
     if re.search(patron4, string) is not None:
         return "Patron encontrado"
     else:
@@ -66,28 +66,42 @@ def palabras_unidas(string):
 print("4", palabras_unidas("hola_hola"))
 
 #5)Escribí un programa que diga si un string empieza con un número específico.
-numero = 5
-#def numero_especifico(string):
- #  if re.search(numero,string) is not None:
-  #     return "Patron encontrado"
-   #else:
-    #   return "patron no encontrado"
-#print(numero_especifico("cuack"))
+
+
+def numero_especifico():
+   numero = 5
+   string = "6 son las vidas de un camion"
+   patron5 = "^"+ str(numero)+ ".*"
+   if re.search(patron5, string):
+       return "el string COMIENZ con ese numero "
+   else:
+       return "el string NO comienza con ese numero"
+print(numero_especifico())
 
 #6)Escribí un programa que dada una lista de strings verifique si se encuentran en una frase dada.
-#lista = ["hola", "como", "estas"]
-#def chequear_lista(lista, string):
- #   patron6 = ""
+
+def palabra_en_frase():
+    frase = "en casa hay un mapa"
+    palabras = ["vida", "mapa", "manzana", "casa"]
+
+    for palabra in palabras:
+        if re.search(palabra, frase):
+            print(f'La palabra "{palabra}" se encontró en la frase.')
+        else:
+            print(f'La palabra "{palabra}" NO se encontró en la frase.')
+print(palabra_en_frase())
 
 
 
 #7)Realizá un programa que encuentre un string que contenga solamente letras minúsculas, mayúsculas, espacios y números.
-def solo_minusculas(string):
-    patron7 = "[a-zA-Z0-9 ]+"
-    re.findall(patron7, string) 
-print(solo_minusculas("buen DI@ 678"))
+lista7 = ["un cuento", "manzna", "zapallo"]
 
-
+def solo_minusculas(lista):
+    patron7 = "[a-zA-Z0-9 ]*"
+    for string in lista:
+        return re.findall(patron7, string) 
+            
+print(solo_minusculas(lista7))
 
 
 #8) Escribi un programa que separe y devuelva los caracteres numericos de un string
@@ -103,9 +117,13 @@ def entre_guiones(string):
 print(entre_guiones("hoy -me fui- pero despues -volvi- moto")) 
 
 #10)Obtené las substrings y las posiciones de estas en una string dada considerando que las substrings están delimitadas por los caracteres @ o &.
+def delimitado_por(string):
+    patron10 = "[^@|&]+[^@|&]?"
+    return re.findall(patron10, string)
+print(delimitado_por("tomas@franco&alberto&1986"))
 
 #11)Realizá un programa que dado una lista de strings verifique que dos palabras dentro del string empiecen con la letra P y las imprima. (Lista de ejemplo: ["Práctica Python", "Práctica C++", "Práctica Fortran"]).
-lista_strings = ["Práctica Python Pancho", "Práctica C++", "Práctica Fortran"]
+lista_strings = ["Práctica Python Pancho", "Práctica C++", "Práctica Portran"]
 def empiezan_con_p(lista):
     patron11 = r"P\w* P\w* P\w*" 
     for string in lista:
@@ -121,9 +139,10 @@ print(separar_ocurrencias( "Hola que tal:buen dia"))
 
 #13)Escribí un programa que reemplace los dos primeros caracteres no alfanúmericos por guiones bajos.
 def reemplazar_caracteres(string):
-    return re.sub(r"^\W{2}", ".", string, count = 1)
+    patron = r"\d{2}"
+    return re.sub(patron, ".", string)
 
-print(reemplazar_caracteres("12hola12"))
+print(reemplazar_caracteres("cuan1243to"))
 
 #14)Realizá un programa que reemplace los espacios y tabulaciones por punto y coma.
 def reemplazar_espacios(string):

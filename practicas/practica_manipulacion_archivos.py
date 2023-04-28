@@ -39,19 +39,11 @@ def leer_guardar(archivo):
         print(linea) #uso strip para eliminar caracteres de salto de linea o espacio en blanco al final de la linea
 print(leer_guardar("archivo3.txt"))
         
-
-
-
-
-
-
-
-
 n = 3
 lineas = [] #archivo donde almacenare las lineas
 with open("archivo3.txt", "r") as archivo:
     lineas = archivo.readlines() #utilizo readlines para que lea todas las lineas
-ultimas_lineas = lineas[-n:]
+    ultimas_lineas = lineas[-n:]
 
 print("Las últimas", n, "líneas del archivo son:")
 for linea in ultimas_lineas:
@@ -68,35 +60,38 @@ print("El archivo tiene {} palabras".format(cantidad_palabras))
 
  
 #5)Escribí un programa que lea un archivo, reemplace una letra por esa misma letra más un salto de línea y lo guarde en otro archivo.
-letra = "p"
-with open("archivo5.txt", "r") as archivo:
-    contenido_archivo5 = archivo.read()
-    letras_reemplazado = contenido_archivo5.replace(letra, "m")
+def reemplazar_letra(archivo):
+    letra = "p"
+    with open(archivo, "r") as arch:
+        contenido_archivo5 = arch.read()
+        letras_reemplazado = contenido_archivo5.replace(letra, "m")
+    with open("archivo5,5.txt", "a") as arch:
+        arch.write(letras_reemplazado)
+print("5", reemplazar_letra("archivo5.txt"))
 
-with open("archivo5,5.txt", "a") as arch:
-    arch.write(letras_reemplazado)
- 
 #6)Realizá un programa que lea un archivo, elimine todos los saltos de línea y lo guarde en otro archivo.
 
-with open("archivo6.txt", "r") as archivo:
-    contenido = archivo.read()
-contenido_sin_salto = contenido.replace("\n", "")
+def eliminar_saltos_de_linea(archivo):
+    with open(archivo, "r") as arch:
+        contenido = arch.read()
+    contenido_sin_salto = contenido.replace("\n", "")
 
-with open("archivo_sin_salto.txt", "w") as archivo_sin_salto:
-    archivo_sin_salto.write(contenido_sin_salto)
-
+    with open("archivo_sin_salto.txt", "w") as archivo_sin_salto:
+        archivo_sin_salto.write(contenido_sin_salto)
+ 
+print("6", eliminar_saltos_de_linea("archivo6.txt"))
 #7)Escribí un porgrama que lea un archivo e identifique la palabra más larga, la cual debe imprimir y decir cuantos caracteres tiene.
 def longest_word(archivo):
     max_long = 0
     palabra = ""
-    with open(archivo, "r") as f:
-        word_list = f.read().split()
-        for word in word_list:
+    with open(archivo, "r") as arch:
+        lista_palabras = arch.read().split()
+        for word in lista_palabras:
             if len(word) > max_long :
                 max_long = len(word)
                 palabra = word
     print("la palabra mas larga es", palabra, "con", max_long, "caracteres")
-longest_word("archivo1.txt") 
+    longest_word("archivo1.txt") 
 
 #8)Escribí un programa que abra dos documentos y guarde el contenido de ambos en un otro documento ya existente.
 with open("archivo8.txt", "r") as archivo1:
