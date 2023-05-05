@@ -60,14 +60,20 @@ print("El archivo tiene {} palabras".format(cantidad_palabras))
 
  
 #5)Escribí un programa que lea un archivo, reemplace una letra por esa misma letra más un salto de línea y lo guarde en otro archivo.
-def reemplazar_letra(archivo):
-    letra = "p"
-    with open(archivo, "r") as arch:
-        contenido_archivo5 = arch.read()
-        letras_reemplazado = contenido_archivo5.replace(letra, "m")
-    with open("archivo5,5.txt", "a") as arch:
-        arch.write(letras_reemplazado)
-print("5", reemplazar_letra("archivo5.txt"))
+def reemplazo(archivo_lectura, archivo_escritura, letra):
+    with open(archivo_lectura, "r") as file1, open(archivo_escritura, "a") as file2:
+        archivo_leido = file1.read()
+        archivo_separado = archivo_leido.replace(letra,"\n" + letra)
+        file2.write(archivo_separado)
+print(reemplazo("archivo5.txt", "archivo5,5.txt", "p"))
+
+"""def reemplazar(entrada, salida, letra):
+    with open(entrada, 'r') as file, open(salida, 'w') as file2:
+        for line in file:
+            file2.write(line.replace(letra, '\n' + letra)) 
+print(reemplazar("archivo5.txt", "archivo5,5.txt", "p"))
+     #Reemplazo y lo escribo en el nuevo archivo
+    # reemplazar('sin_saltos.txt', 'texto_prueba.txt','n')"""
 
 #6)Realizá un programa que lea un archivo, elimine todos los saltos de línea y lo guarde en otro archivo.
 
@@ -94,13 +100,21 @@ def longest_word(archivo):
     longest_word("archivo1.txt") 
 
 #8)Escribí un programa que abra dos documentos y guarde el contenido de ambos en un otro documento ya existente.
-with open("archivo8.txt", "r") as archivo1:
+def dos_documentos(archivo, archivo2, archivocontenido):
+    with open(archivo, "r") as file1, open(archivo2, "r") as file2, open(archivocontenido, "a") as file3:
+        archivo1leido= file1.read()
+        archivo2leido = file2.read()
+        file3.write(archivo1leido)
+        file3.write(archivo2leido)
+print(dos_documentos("archivo8.txt", "archivob.txt", "archivo8leido.txt"))
+
+"""with open("archivo8.txt", "r") as archivo1:
     archivo1_leido = archivo1.read()
 with open("archivob.txt", "r") as archivo2:
     archivo2_leido = archivo2.read()
 with open("archivo8leido.txt", "a") as archivo_final:
     archivo_final.write(archivo1_leido)
-    archivo_final.write(archivo2_leido)
+    archivo_final.write(archivo2_leido)"""
 
 #def join_files(file1,file2,file3):
  #   with open(file1, "r") as f1, open(file2, "r") as f2, open(file3, "a") as f3:    #otraa forma
@@ -134,3 +148,10 @@ for archivo in os.listdir(ruta_carpeta1): #recorremos todos los archivos de la c
         archivo_resultado.write(contenido)
 
 
+def reemplazar(entrada, salida, letra):
+    with open(salida, "a") as archivo1:
+        with open(entrada, "r") as archivo2:
+            texto = archivo2.read()
+            texto2 = texto.replace(letra, letra + "\n")
+            archivo1.write(texto2)
+        

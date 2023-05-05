@@ -110,6 +110,10 @@ def devuelve_numeros(string):
     for elemento in resultado:
         print(elemento)
 devuelve_numeros("hoy hice 3 medialunas con 6 cafes y 2 huevos")
+def duda(string):
+    print (re.search("[0-9].*?[0-9]", string).group())
+
+print(duda("hoy hice 3 medialunas con 6 cafes y 2 huevos"))
 
 #9 Escribí un programa que extraiga los caracteres que estén entre guiones en un string. (String de ejemplo: "Hoy estuvimos trabajando con re -regular expression- en python -con VSCode-")
 def entre_guiones(string):
@@ -139,8 +143,9 @@ print(separar_ocurrencias( "Hola que tal:buen dia"))
 
 #13)Escribí un programa que reemplace los dos primeros caracteres no alfanúmericos por guiones bajos.
 def reemplazar_caracteres(string):
-    patron = r"\d{2}"
-    return re.sub(patron, ".", string)
+    #patron = "\d{0}" #_c_u_a_n_1_2_4_3_t_o_
+    patron = "(\d{2})"
+    return re.sub(patron, "_", string)
 
 print(reemplazar_caracteres("cuan1243to"))
 
@@ -171,3 +176,9 @@ print(er("llover, comer, barrer "))
 def encontrar_nombres(string):
     return re.findall("[A-Z][a-z]\w+", string)
 print(encontrar_nombres("Maria y Andres tienen 3 hijos, Juan de 16, Marcela de 10 y Daniel de 5"))
+
+
+"""
+Con [._-] se busca los caracteres . o _ o -. 
+Con (._-) busca la secuencia en ese orden
+"""

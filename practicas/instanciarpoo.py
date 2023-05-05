@@ -1,4 +1,4 @@
-from practicapoo import mac, contador, calculadora, titan1, enterprise
+from practicapoo import mac, contador, calculadora, titan1, enterprise, estudiante
 
 #3
 print(mac.precio)
@@ -48,3 +48,13 @@ print(enterprise.fortalezaDefensiva())
 print(enterprise.fortalezaOfensiva())
 print(enterprise.necesitaFortalecerse())
 print(enterprise.coraza_actual())
+
+#modelo estudiante
+print("estudiantes")
+estudiante.hacer_ejercicio(30)
+print(estudiante.energia_actual())
+estudiante.estudiar(3)
+print(estudiante.energia_actual())
+estudiante.comer()
+print(estudiante.aprobar())
+print(estudiante.energia_actual())

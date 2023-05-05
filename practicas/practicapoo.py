@@ -116,6 +116,7 @@ class Enterprise:
             self.coraza = 0
         else:
             self.coraza -= puntos
+            
     def fortalezaDefensiva(self):
         return (self.potencia + self.coraza)
     
@@ -128,7 +129,49 @@ class Enterprise:
         else:
             return ((self.potencia - 20) / 2)
 
-
-
-             
 enterprise = Enterprise()
+
+
+#modelos estudiantes
+class Persona:
+    def __init__(self, energia):
+        self.energia = energia
+        self.felicidad = False
+
+    def energia_actual(self):
+        return self.energia
+
+    def dormir(self, horas):
+        if (self.energia + (horas * 12.5)) > 100:
+            self.energia = 100
+        else:
+            self.energia += (horas * 12.5)
+    
+    def hacer_ejercicio(self, minutos):
+        if self.energia - (minutos / 1.2) < 0:
+            self.energia = 0
+        else:
+            self.energia -= minutos / 1.2
+
+    def comer(self):
+        if self.energia + 10 > 100:
+            self.energia = 100
+        else:
+            self.energia += 10
+
+class Estudiante(Persona):
+    def estudiar(self, horas):
+        if (self.energia - (horas * 20)) < 0:
+            self.energia = 0
+        else:
+            self.energia -= (horas * 20)
+    def aprobar(self):
+        return True
+
+estudiante = Estudiante(100)
+    
+        
+
+
+
+
