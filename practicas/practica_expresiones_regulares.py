@@ -182,3 +182,5 @@ print(encontrar_nombres("Maria y Andres tienen 3 hijos, Juan de 16, Marcela de 1
 Con [._-] se busca los caracteres . o _ o -. 
 Con (._-) busca la secuencia en ese orden
 """
+
+patron_mail = "([a-zA-Z0-9_.+-]+)@[a-zA-Z0-9_.+-]+\.[a-zA-Z0-9_.+-]"
