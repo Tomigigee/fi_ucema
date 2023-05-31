@@ -39,15 +39,15 @@ class Rojo:
 
 class Rosa:
     def puntos(self):
-        return 2      
+        return 4      
 
 class Naranja:
     def puntos(self):
-        return 2      
+        return 6     
 
 class Verde:
     def puntos(self):
-        return 2      
+        return 8     
     
 pacman = PacMan()
 rojo = Rojo()

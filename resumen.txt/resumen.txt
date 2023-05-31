@@ -1,0 +1,196 @@
+ CLASE 1:
+Python es un interprete. Tiene un software IHC (Humano-Consola)
+Los PROMPT de Python son “>>>”
+Nunca ejecutar el codigo de python en la terminal
+Para comentar en py se puede hacer con “”” (triple comilla)
+“”” hola “””
+Guardar: CTRL + S
+Selector multilinea: CTRL+ D
+Abrir terminal: CTRL+J
+Seleccionar todo: CTRL + A
+Siempre que quiero ejecutar un script tengo que estar en la carpeta del script.
+
+Comandos para la terminal:
+ls: lista archivos de un directorio.
+Para ejecutar el script usamos: python miTAB(la tecla)
+cd: Cambiar directorio
+pwd: donde estoy trabajando
+
+Al comienzo agregar: #!/bin/python3 
+#!/usr/bin/env python3
+
+
+def main():
+   Print(“hola”)
+If __name__ == “__main__”:
+    Main()
+
+Una biblioteca, paquete, librería es una carpeta de scripts con funciones que se pueden utilizar. Por ejemplo: Pandas es una biblioteca.
+El gestor de paquetes en Python es PiP. Pip install ____.
+Siempre verificar si ya está instalada. Para eso usamos import, si corre está instalada, sino no está instalada. 
+
+Clase 2: MANIPULACION DE ARCHIVOS
+
+En la primer línea de un script se suele poner #! que se llama shebang
+Los nombres de scripts no deben contener espacios. No usar de nombre de script el nombre de la biblioteca.
+
+Variable: consiste en asignarle un valor de algo en la memoria.
+
+Apertura de archivos:
+open(path_al_archivo, modo)
+“path_al_archivo” es un objeto de tipo string que indica la ruta en la queso encuentra el archivo.
+“modo” es un objeto de tipo string que indica la forma en la que Python accederá al archivo.
+Modos de apertura:
+r: abrir un archivo solo para lectura
+r+: abrir un archivo para la lectura y escritura
+w: Abre un archivo solo para escritura. Sobreescribe el archivo si este ya existe. Si el archivo no existe, crea un nuevo archivo para escritura.
+a: Abre un archivo para agregar información. Si el archivo no existe, crea uno nuevo.
+archivo = open(path_al_archivo, modo)
+archivo.close()
+arch.read: lee un string
+arch.readlines: lee una lista
+
+La forma de apertura que se suele usar es:
+with open(path_al_archivo, modo) as miarch:
+	#aqui van las lineas de procesamiento del archivo
+sys: toma parámetros desde la terminal
+os : manipulación de archivos
+
+CLASE 3: GIT
+
+git remote add origin git@github…..(la ssh): para linkearlo con nuestro github
+gir add: preparate para la foto
+git commit: saca la foto y anota metadata
+git commit -m “add script clase_3” 
+git push: sube los cambios a la web
+git pull: me baja los cambios de un proyecto a mi computadora local
+git clone: baja un repositorio por primera vez (se usa una sola vez)
+
+SIEMPRE ANTES DE ARRANCAR HACER UN GIT PULL Y ANTES DE IRME UN GIT PUSH
+
+notepad miscript.py: abre un bloc de notas
+code miscript.py: abre el script
+
+NUNCA PONERLE UNA PALABRA RESERVADA A UN SCRIPT (pandas, print, etc)
+
+
+CLASE 4:
+os.mkdir(ruta): crea una carpeta en la ruta indicada 
+os.chdir(ruta): nos permite movernos de carpeta hasta la ruta indicada
+
+ejemplo: os.mkdir(“../Escritorio/carpeta”)
+
+Con el metodo glob de la biblioteca glob podemos obtener la lista de archivos especificos
+range(a, b, c)... donde a = inicio, b= fin, c= paso
+
+CLASE 5: EXPRESIONES REGULARES 
+gitignore
+Expresiones regulares:
+Sirve para realizar búsquedas de texto masivas de un patron de texto sobre una fuente que no conozco.
+Son patrones de texto expresados en código
+
+secuencias de escape:
+\n
+salto de línea
+\t
+Tab o cambio de pestaña 
+\s
+espacio
+'
+Comillas simples
+"
+Comillas dobles
+
+
+Formas de encriptar un código:
+^ : Inicio de linea—- ^\t def : buscaria una funcion. Se usa para pedir que arranque si o si con lo que le pidamos
+^ dentro de una funcion: negacion
+$ : fin de linea. Que termine si o si con lo que le pidamos.
+\A : Inicio de texto
+\Z : Fin de texto
+. : Coincide con cualquier caracter de la linea.
+
+Metacaracteres cuantificadores: 
+* : cero o más (todas las ocurrencias de un string)
++ : Una o más ocurrencias del patrón
+?: Cero o una
+{n} : Exactamente n veces
+{n,m}: Por lo menos n pero no más de m veces.
+
+Metacaracteres predefinidos:
+\w : caracter alfanumérico
+\W: Caracter NO alfanumérico
+\d: Carácter numérico
+\D: Carácter no numérico
+\s : Un espacio de cualquier tipo
+\S: Cualquier carácter que no sea un espacio
+
+
+regex101.com2
+
+ Desafío I: ¿Construí la expresión regular que obtenga al menos 4 dígitos?
+\d{4,}
+
+Desafío II: ¿Construí la expresión regular que obtenga al entre 3 y 6 letras minúsculas?
+[a-z]{3,6}
+ Desafío III: ¿Construí la expresión regular que obtenga todas las apariciones del patrón ab en un string?
+ab*
+
+En expresiones regulares: 
+or = |  
+and = &
+
+Si se busca encontrar encontar el patron se debe utilizar un re.match 
+ (.{0,9}?).
+ \d{1,2} 
+
+CLASE 6: POO
+
+Los objetos interaccionan entre si a traves de los mensajes que puedennleer
+Los objetos no saben si son polimorficos. Los objetos que comparten su interfaz son polimorficos. En este caso vemos un polimorfico parcial.Para ver polimorfismo necesitamos un actor 
+
+Self = uno mismo
+Los estados dentro de las clases se definen con __init__
+
+La diferencia entre un metodo y una función es que el metodo está dentro de una clase
+
+Polimorfismo: poder enviarle el mismo mensaje a objetos de distintas clases. Tiene que haber una clase que utilice a otras dos clases. Deben haber si o si dos mensajes. Se da un mismo mensaje pero el resultado es distinto.
+
+Para que estemos ante un caso de polimorfismo es necesaria la presencia de al menos tres objetos: uno que envíe el mensaje y dos de clases distintas que puedan entenderlo. 
+
+Esta práctica de minimizar el acceso a los atributos de otros objetos se llama encapsulamiento 
+
+objeto.mensaje() 
+
+Los atributos siempre están en el __init__(), pero dentro del () están los parámetros.
+
+Estado: El conjunto de atributos. El estado seria: self.edad, self.altura, self.energia.
+
+__init__ es el constructor.
+
+Interfaz: Es el conjunto de métodos o mensajes que pueden tener una clase.
+
+La funcion siempre tiene que devolver algo, mientras que los procedimientos no. __init__ no cuenta.
+Los procedimientos nunca devuelven nada.
+
+Comando pass para saltear una función / procedimiento.
+
+Self no cuenta como un parámetro de la clase. Si preguntan cuales son los parametros y solo tiene self decimos que no tiene parametros.
+
+Si preguntan si dos clases comparten interfaz no es una pregunta de si o no, ya que pueden compartir parte de la interfaz. Es decir, si comparten 4 metodos de 5 no compartir toda la interfaz sino una parte.
+
+Self es la referencia al propio objeto. 
+
+Diferencia entre metodo y funcion: 
+Los metodos se encuentran dentro de una clase mientras que las funciones no.
+El metodo puede o no retornar algo.
+
+Para que sean polimorfismo tiene que haber un tercer objeto que entienda el mismo mensaje de los otros dos.
+
+Clases:
+Abstractas: Ejemplo aves, dispositivo. Las llamamos asi ya que nunca las instanciamos y solo las utilizamos para proveer comportamiento a sus subclases. Nunca creamos objetos en esta clase. 
+Concretas: Ejemplo Golondrina, Notebook. Aqui se crean objetos y se instancian.
+
+
+RUTAS
+a la hora de acceder al archivo podemos enfocarlo de manera de acceder al archivo con la ruta absoluta (completa) o la ruta relativa. Con la primera usamos la ruta desde la carpeta base o raíz hasta el archivo en cuestión, y con la segunda tenemos en cuenta dónde estamos parados y aclaramos la ruta desde allí. En este caso la ruta absoluta es la que está mostrada más arriba y si, por ejemplo, estamos en la carpeta /home/usuario la ruta relativa que deberíamos usar es: ./Documentos/UCEMA/Fundamentos/Práctica4/archivo.txt (recuerden que si usamos un punto, ., estamos diciendo "a partir de esta carpeta").

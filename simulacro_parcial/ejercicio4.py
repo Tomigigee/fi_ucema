@@ -29,3 +29,4 @@ class Fantasma:
 
 pacman = PacMan()
 fantasma = Fantasma()
+#fantasma
