@@ -9,7 +9,7 @@ app = Flask(__name__) #Me refiero a la aplicacion por la palabra app. Instanciam
 
 @app.get("/") #Le asociamos una ruta a app
 def home(): #Es el metodo que me permite mostrar los datos que estan asociados a la pagina( en este caso ninguno)
-    return render_template("home.html")
+    return render_template("home.html") #si no funciona habria que poner el path a home.html
     #return "<p>Te damos la bienvenida a Macowins, </p>"
 
 #Tarea: armar la ruta /prendas que muestre todos los items de prendas
