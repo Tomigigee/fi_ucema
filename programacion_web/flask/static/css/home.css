@@ -1,9 +1,32 @@
+*{
+    margin: 0px;
+    padding: 2px,1px,3px,10px;
+}
+
 h1 {
     color: #0bff28;
 }
 
+.about {
+    background-color: bisque;
+}
 
+.about p{
+    background-color: red
+}
 
+.about p:hover {
+    color: blue
+}
+
+.catalogo p{
+    background-color: green;
+
+}
+
+.about img{
+    width: 800px;
+}
 
 
 
