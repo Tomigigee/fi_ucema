@@ -6,5 +6,3 @@ app = Flask(__name__) #Me refiero a la aplicacion por la palabra app. Instanciam
 def home(): #Es el metodo que me permite mostrar los datos que estan asociados a la pagina( en este caso ninguno)
     return render_template("home.html") 
 
-
-
