@@ -1,6 +1,6 @@
 from flask import Flask, render_template
-from markupsafe import escape 
-import pandas as pd
+from markupsafe import escape
+import pandas as pd 
 
 app = Flask(__name__)
 
