@@ -194,6 +194,7 @@ def find_tel(texto):
 #a) obtener la lista de los substrings delimitados entre '<' y '>' que no incluyan ninguna 'o'.
 def entre_piquitos_sin_o(string):
     return re.findall("[<]([^o]*?)[>]", string)
+
 print(entre_piquitos_sin_o("ds<hola>hsb<hhj>sdk<469>nkd")) 
 
 # b) Onomatopopih, que aún no sabe mucho de expresiones regulares,

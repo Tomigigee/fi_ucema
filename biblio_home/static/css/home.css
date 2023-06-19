@@ -6,7 +6,7 @@
     
 }
 
-p{
+.enunclick{
     background-color: lightgreen;
     font-size: xx-large;
     text-align: center;
@@ -14,12 +14,14 @@ p{
 
 h1{
     background-color: lightgreen;
-    color: rgb(180, 119, 250) ;
+    color: rgb(230, 39, 234) ;
     text-align: center;
     background: lightgreen;
-    font-size: 80px;
+    font-size: 100px;
     letter-spacing: 12px;
-    text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+    text-shadow: -4px -4px 2px #000, 4px 4px 2px #000, -4px 4px 2px #000, 4px -4px 2px #000;
+    margin-bottom: 0px;
+    margin-top: 50px;
 }
 
 .h2 {
@@ -101,26 +103,39 @@ h1{
 }
 
 .flecha-click {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    background-color: transparent;
-    margin-left: 550px;
-    margin-bottom: px;
-
-}
-
-img {
+    width: 400px;
+    height: 300px;
     position: absolute;
-    float: left;
-    
+    margin-top: -540px;
+    margin-left: 800px;
+    background-color: transparent;
+    background: transparent;
+    color: purple;
 }
 
 .buscar {
-    text-align: center;
+    
     background-color: greenyellow;
-    margin-left: 290px;
-    margin-right: 290px;
-    margin-bottom: 50px;
     font-size: 50px;
+    margin-left: 360px;
+    margin-right: 360px;
+
+}
+
+.buscartexto{
+    background-color: greenyellow;
+    text-align: center;
+    padding: 25px;
+    margin-bottom: 10px;
+    font-size: xx-large;
+}
+
+.cursor{
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    background-color: transparent;
+    margin-top: -60px;
+    margin-left: 410px;
+    
 }

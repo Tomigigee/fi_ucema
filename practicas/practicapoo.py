@@ -65,8 +65,8 @@ class Gorrion:
         self.gramos.append(gramos)
     
     def css(self):
-        if sum(self.gramos) = 
-        return sum(self.kilometro) / sum(self.gramos)
+        if sum(self.gramos):
+            return sum(self.kilometro) / sum(self.gramos)
     def cssp(self):
         pass
     def cssv(self):
@@ -79,7 +79,7 @@ class Titan:
     def __init__(self, salud):
         self.salud = salud
 
-    def recibir_ataque(self, cantidad):
+    def recibir_ataque(self ,cantidad):
         self.salud -= (cantidad * 1.5)
     
     def esta_vivo(self):
