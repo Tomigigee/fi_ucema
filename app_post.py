@@ -41,3 +41,9 @@ def create_prenda():
         return redirect(url_for('success'))
     else:
       return render_template('new_prendas.html')
+    
+
+
+"""
+{{ url_for('static', filename='css/home.css') }}
+"""

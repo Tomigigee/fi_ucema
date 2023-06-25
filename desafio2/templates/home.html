@@ -4,30 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="C:\Users\fgige\Desktop\fi_ucema\desafio2\static\css\home.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/home.css') }}"> /*{{url_for('static', filename='css/home.css') }}*/
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kablammo&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
+        
         <div class="box box1">
-            <p>ELEGI<p>
-            <p>Y<p>
-            <p>LLEVALO<p>
-        </div>
-        <div class="box box2">
-            <div>
-                <p class="buscar">BUSCAR</p>
-                <img class="shampoo" src="C:\Users\fgige\Desktop\fi_ucema\desafio2\static\Captura de pantalla 2023-06-16 134311.png" alt="b">
-                <img class="foto" src="https://cdn3.iconfinder.com/data/icons/picons-social/57/46-facebook-512.png" alt="a">
-
+            <div class="elegi_y_llevalo">
+                ELEGI <br> Y <br> LLEVALO
+                
             </div>
             
         </div>
+        <div class="box box2">
+            <div>
+                <a href="{{ url_for('get_all_products') }}"><p>BUSCAR</p></a>
+                <img class="redes" src="C:\Users\fgige\Desktop\fi_ucema\desafio2\static\css\imagenes\redes.png" alt="">
+                
+            </div>
+            
+        </div>
+        
         <div class="box box3"> 
             <p class="consejos">CONSEJOS UTILES</h2>
-
         </div>
-        <div class="box box4">4</div>
         
+        <div class="box box4">
+            <img class="youtube" src="https://cdn-icons-png.flaticon.com/512/1384/1384086.png" alt="">
+        </div>
+        <img class="shampoo" src="C:\Users\fgige\Desktop\fi_ucema\desafio2\static\css\imagenes\Captura de pantalla 2023-06-20 165058.png" alt="">
     </div>
 </body>
 </html>
