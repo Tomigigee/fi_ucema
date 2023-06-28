@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.section-cajas{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-end;
+}
+
+.div-cajas {
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    
+}
+
+.div-rojo {
+    background-color: red;
+}
+
+.div-verde {
+    background-color: green;
+}
+
+.div-violeta {
+    background-color: purple;
+}

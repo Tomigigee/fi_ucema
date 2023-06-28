@@ -13,13 +13,12 @@ print("El archivo {} tiene {} líneas que no comienzan con la letra {}.".format(
 
 
 #2)Escribí un programa que lea un archivo e imprima las primeras n líneas.
-cantidad_lineas = 2
-def leer_imprimir(archivo):
+def leer_imprimir(archivo, cantidad_lineas):
     with open(archivo, "r") as archivo:
         for linea in range(cantidad_lineas):
             lineas = archivo.readline()
             print(lineas)
-print(leer_imprimir("archivo2.txt"))
+print(leer_imprimir("archivo2.txt", 2))
 
 """"
 cantidad_lineas = 5
@@ -231,7 +230,7 @@ def encontrar_mails(archivo, archivo_salida):
     pattern = r"[a-z0-9]+[._-]?[a-z0-9]*[@][a-z]+[.][a-z]+[.]?[a-z]*"
     mails = re.findall(pattern, texto_leido)
     print (mails)
-    with open (archivo_salida, "w") as file2:
+    with open (archivo_salida, "a") as file2:
         for mail in mails:
             file2.write(mail + "\n")
 
